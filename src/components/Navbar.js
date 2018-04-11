@@ -1,7 +1,10 @@
 import React from 'react';
+import { Scale } from '../utils/Scale.js';
 
 export class Navbar extends React.Component {
     render() {
+        const scale = new Scale("C");
+        const notes = scale.getScale( scale.intmaj );
         return (
             <nav className="navbar navbar-default navbar-fixed-bottom pri-color">
               <div className="container-fluid">
@@ -14,13 +17,9 @@ export class Navbar extends React.Component {
                 </div>
                 <div id="navbarCollapse" className="collapse navbar-collapse">
                   <ul className="nav navbar-nav">
-                    <li><a id="C" className="note"> C </a></li>
-                    <li><a id="D" className="note"> D </a></li>
-                    <li><a id="E" className="note"> E </a></li>
-                    <li><a id="F" className="note"> F </a></li>
-                    <li><a id="G" className="note"> G </a></li>
-                    <li><a id="A" className="note"> A </a></li>
-                    <li><a id="B" className="note"> B </a></li>
+                    {Object.keys( notes ).map( (note, i) => (
+                        <li><a id={notes[note]} className="note">{notes[note]}</a></li>
+                    ))}
                   </ul>
                 </div>
               </div>
