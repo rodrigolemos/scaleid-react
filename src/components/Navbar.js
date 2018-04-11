@@ -18,7 +18,7 @@ export class Navbar extends React.Component {
                 <div id="navbarCollapse" className="collapse navbar-collapse">
                   <ul className="nav navbar-nav">
                     {Object.keys( notes ).map( (note, i) => (
-                        <li><a id={notes[note]} className="note">{notes[note]}</a></li>
+                        <li><a key={i} id={notes[note]} className="note">{notes[note]}</a></li>
                     ))}
                   </ul>
                 </div>
