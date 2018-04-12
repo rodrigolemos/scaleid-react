@@ -1,7 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Scale } from '../utils/Scale.js';
+import { PanelScale } from './PanelScale';
 
 export class Navbar extends React.Component {
+    selectNote(choice) {
+      ReactDOM.render(<PanelScale note={choice}/>, document.getElementById('content'));
+    }
     render() {
         const scale = new Scale("C");
         const notes = scale.getScale( scale.intmaj );
@@ -17,8 +22,8 @@ export class Navbar extends React.Component {
                 </div>
                 <div id="navbarCollapse" className="collapse navbar-collapse">
                   <ul className="nav navbar-nav">
-                    {Object.keys( notes ).map( (note, i) => (
-                        <li><a key={i} id={notes[note]} className="note">{notes[note]}</a></li>
+                    {Object.keys( notes ).map( (note, index) => (
+                        <li key={index}><a id={notes[note]} className="note" onClick={() => this.selectNote( notes[note] ) }>{notes[note]}</a></li>
                     ))}
                   </ul>
                 </div>

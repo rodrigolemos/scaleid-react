@@ -15,6 +15,10 @@
       vertical-align: top;
     }
     
+    .navbar a {
+      cursor: pointer;
+    }
+    
     .navbar .navbar-collapse {
       text-align: center;
     }
