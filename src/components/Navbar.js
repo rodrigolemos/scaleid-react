@@ -5,7 +5,8 @@ import { PanelScale } from './PanelScale';
 
 export class Navbar extends React.Component {
     selectNote(choice) {
-      ReactDOM.render(<PanelScale note={choice}/>, document.getElementById('content'));
+      ReactDOM.render(<PanelScale note={choice}/>,
+      document.getElementById('content'));
     }
     render() {
         const scale = new Scale("C");
@@ -14,7 +15,9 @@ export class Navbar extends React.Component {
             <nav className="navbar navbar-default navbar-fixed-bottom pri-color">
               <div className="container-fluid">
                 <div className="navbar-header">
-                  <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle" id="btn-navbar-toggle">
+                  <button type="button" data-target="#navbarCollapse"
+                  data-toggle="collapse" className="navbar-toggle"
+                  id="btn-navbar-toggle">
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>

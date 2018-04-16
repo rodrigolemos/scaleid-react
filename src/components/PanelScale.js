@@ -9,7 +9,8 @@ export class PanelScale extends React.Component {
     const scales = new Scale( this.props.note ).getField();
     return (
       <div className="row divs">
-        <div className="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" align="center">
+        <div className="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2
+        col-md-offset-3" align="center">
             <TitleScale rootName={this.props.note}/>
             {Object.keys( scales ).map( (item, index) => (
                 <div key={index} className="pattern-body">
