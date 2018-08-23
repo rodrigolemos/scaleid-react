@@ -1,6 +1,11 @@
 import React from 'react';
+import Tone from 'tone';
 
 export class NotesInScale extends React.Component {
+  playNote(note) {
+    var synth = new Tone.Synth().toMaster();
+    synth.triggerAttackRelease( note + "4", "8n");
+  }
   render() {
     const notes = this.props.scale;
     const buttons = notes.map( (note, index) => {
@@ -13,7 +18,7 @@ export class NotesInScale extends React.Component {
       }
       
       return (
-        <button key={index} className={ btndesign }>{note}</button>
+        <button key={index} className={ btndesign } onClick={() => this.playNote( note ) }>{note}</button>
       )
       
     });
