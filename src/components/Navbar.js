@@ -4,8 +4,8 @@ import { Scale } from '../utils/Scale.js';
 import { PanelScale } from './PanelScale';
 
 export class Navbar extends React.Component {
-    selectNote(choice) {
-      ReactDOM.render(<PanelScale note={choice}/>,
+    selectNote(nchoosen) {
+      ReactDOM.render(<PanelScale note={nchoosen}/>,
       document.getElementById('content'));
     }
     render() {
