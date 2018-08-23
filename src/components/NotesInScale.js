@@ -18,7 +18,8 @@ export class NotesInScale extends React.Component {
       }
       
       return (
-        <button key={index} className={ btndesign } onClick={() => this.playNote( note ) }>{note}</button>
+        <button key={index} className={ btndesign }
+        onClick={() => this.playNote( note ) }>{note}</button>
       )
       
     });
